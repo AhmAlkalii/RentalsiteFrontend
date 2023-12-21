@@ -23,7 +23,7 @@
                     <a class="nav-link" [routerLink]="['/login']">Login</a>
                 </li>
                 <li class="nav-item" *ngIf="!isLoggedIn">
-                    <a class="nav-link"  (click)="onLogoutClicked()">Sign Up</a>
+                    <a class="nav-link"  (click)="onLogoutClicked()">Register</a>
                 </li>
                 <li class="nav-item" *ngIf="isLoggedIn">
                     <a class="nav-link" (click)="onLogoutClicked()">Logout</a>
