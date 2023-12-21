@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/home']">Car Rental</a>
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/my-available-cars']" (click)="isMenuCollapsed = true">Available cars</a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn">
+                    <a class="nav-link" [routerLink]="['/my-reservations']" (click)="isMenuCollapsed = true">My reservations</a>
+                </li>
+                <li class="nav-item" *ngIf="!isLoggedIn">
+                    <a class="nav-link" [routerLink]="['/login']">Login</a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn">
+                    <a class="nav-link" (click)="onLogoutClicked()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
