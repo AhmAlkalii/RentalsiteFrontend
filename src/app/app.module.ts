@@ -7,19 +7,41 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { MyAvailableCarsComponent } from './my-available-cars/my-available-cars.component';
+import { MyReservationsComponent } from './my-reservations/my-reservations.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { CarInfoComponent } from './car-info/car-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    MyAvailableCarsComponent,
+    MyReservationsComponent,
+    AboutUsComponent,
+    LoginComponent,
+    SignUpComponent,
+    CarInfoComponent
   ],
   imports: [
     BrowserModule,
+    NgbDropdownModule,
     RouterModule.forRoot([
+      { path: 'my-reservations', component: MyReservationsComponent},
+      { path: 'my-available-cars', component: MyAvailableCarsComponent},
+      { path: 'about-us', component: AboutUsComponent},
+      { path: 'sign-up', component: SignUpComponent},
+      { path: 'login', component: LoginComponent},
+      { path: 'home', component: HomeComponent},
       { path: '*', redirectTo:'/home' ,pathMatch : 'full'},
     ]),
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
