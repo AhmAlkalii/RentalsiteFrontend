@@ -1,5 +1,5 @@
 <div class="col mb-4">
-    <div class="card round" style="width: 18rem; background-color: #4CB9E7;">
+    <div class="card round" style="width: 18rem;">
         <img [src]="car.pictureUrl" [alt]="car.brand" class="car-img-top">
         <div class="card-body">
             <h5 class="card-title">{{car.brand}}</h5>
@@ -11,7 +11,7 @@
           <li class="list-group-item">Price: {{car.price}}</li>
         </ul>
         <div class="card-body">
-            <button type="button" class="btn btn-outline-primary card-link" [routerLink]="['/my-reservations']">Rent</button>
+            <button type="button" class="btn btn-outline-secondary card-link" [routerLink]="['/my-reservations']">Rent</button>
         </div>
     </div>
 </div>

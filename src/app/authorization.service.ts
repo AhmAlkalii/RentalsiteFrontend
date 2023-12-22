@@ -1,28 +1,56 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorizationService {
 
+  private apiUrl = 'http://localhost:5000'; 
+
   logged = false;
+  private signedUp = false;
+
+  hasSignedUp(): boolean {
+    return this.signedUp;
+  }
 
   get isLoggedIn(){
     return this.logged;
   }
 
-login(email:any,password:any){
-  console.log(email,password);
-  this.logged = true;
-  this.router.navigate(['/home']);
-}
-
-
-  logout(){
-    this.logged = false;
-    this.router.navigate(['/login'])
+  loginUser(loginData: any): Observable<any> {
+    const url = `${this.apiUrl}/login`;
+    return this.http.post(url, loginData).pipe(
+      tap(() => {
+        this.logged = true;
+      })
+    );
   }
 
-  constructor(private router:Router) {}
+  logout(): Observable<any> {
+    const url = `${this.apiUrl}/logout`; 
+    return this.http.post(url, {}).pipe(
+      tap(() => {
+        this.logged = false;
+        this.router.navigate(['/login']);
+      })
+    );
+  }
+
+  registerUser(formData: any): Observable<any> {
+    const url = `${this.apiUrl}/register`;
+    return this.http.post(url, formData).pipe(
+      tap(() => {
+        this.signedUp = true;
+      })
+    );
+  }
+
+
+  
+  constructor(private router:Router, private http: HttpClient) {}
 }
