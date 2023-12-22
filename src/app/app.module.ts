@@ -16,6 +16,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CarInfoComponent } from './car-info/car-info.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CarInfoComponent } from './car-info/car-info.component';
     AboutUsComponent,
     LoginComponent,
     SignUpComponent,
-    CarInfoComponent
+    CarInfoComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { CarInfoComponent } from './car-info/car-info.component';
       { path: 'sign-up', component: SignUpComponent},
       { path: 'login', component: LoginComponent},
       { path: 'home', component: HomeComponent},
+      { path: 'contact', component: ContactsComponent},
       { path: '*', redirectTo:'/home' ,pathMatch : 'full'},
     ]),
     NgbModule,
