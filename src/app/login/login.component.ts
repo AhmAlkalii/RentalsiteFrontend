@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthorizationService } from '../authorization.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
- constructor(private authService: AuthorizationService, private router: Router) {}
+ constructor(private authService: AuthorizationService, private router: Router, private toastr: ToastrService) {}
+
 
   loginForm = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
@@ -36,4 +38,12 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {}
+
+  showToasterSuccess(){
+    this.toastr.success("Logged in successfully !!", "Enjoy!!",{
+    easing:"ease-in",
+    easeTime: 1000
+    });
+  }
+
 }

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ToastModule } from 'primeng/toast';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -17,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CarInfoComponent } from './car-info/car-info.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { timeout } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,13 @@ import { ContactsComponent } from './contacts/contacts.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: "toast-top-right",
+      preventDuplicates: true,
+      timeOut: 5000,
+    }),
+    ToastModule,
     ReactiveFormsModule
   ],
   providers: [],

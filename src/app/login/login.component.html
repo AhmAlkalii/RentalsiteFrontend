@@ -18,6 +18,14 @@
           </div>
       </div>
 
-      <button class="btn btn-primary w-100" type="submit" [disabled]="loginForm.invalid">Log in</button>
+      <button
+        (click)="showToasterSuccess()"
+        type="submit"
+        mat-raised-button
+        [disabled]="loginForm.invalid"
+        class="btn btn-primary w-100 p-button-success"
+      >
+        Log in
+      </button>
   </form>
 </div>
