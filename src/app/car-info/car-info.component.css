@@ -2,3 +2,13 @@
     border-radius: 2px;
     background-color: #F6D6D6;
 }
+
+.cd :hover{
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
+}
+
+.custom-list-item {
+    background-color: #DED0B6; 
+    border: none; 
+}
