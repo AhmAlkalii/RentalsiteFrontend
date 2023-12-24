@@ -1,1 +1,37 @@
-<p>my-reservations works!</p>
+<div class="container mt-3">
+  <h2>Make a Reservation</h2>
+  <form (submit)="makeReservation()" #reservationForm="ngForm">
+    <fieldset>
+      <div class="mb-3">
+        <label for="brand" class="form-label">Car Brand</label>
+        <select class="form-control" id="brand"  [(ngModel)]="selectedCar"  name="brand" required>
+          <option *ngFor="let car of availableCars" [value]="car.brand">{{ car.brand }}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="from_location" class="form-label">From Location</label>
+        <input type="text" class="form-control" id="from_location" [(ngModel)]="reservationData.from_location" name="from_location" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="to_location" class="form-label">To Location</label>
+        <input type="text" class="form-control" id="to_location" [(ngModel)]="reservationData.to_location" name="to_location" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Make Reservation</button>
+    </fieldset>
+  </form>
+
+  <div class="mt-5">
+    <h2>Reservation History</h2>
+    <ul class="list-group">
+      <li *ngFor="let reservation of reservations" class="list-group-item">
+        <strong>Car Brand:</strong> {{ reservation.brand }}<br>
+        <strong>From Location:</strong> {{ reservation.from_location }}<br>
+        <strong>To Location:</strong> {{ reservation.to_location }}
+      </li>
+      <li *ngIf="reservations.length === 0" class="list-group-item">No reservations found.</li>
+    </ul>
+  </div>
+</div>
