@@ -11,6 +11,7 @@ export class HomeshowroomService {
   private imageUrls = [
     "/assets/images/bg1.jpg",
     "https://png.pngtree.com/background/20230412/original/pngtree-car-showroom-lighting-effect-advertising-background-picture-image_2401286.jpg",
+    "https://www.topgear.com/sites/default/files/images/news-article/2020/11/86d1c7742a1e093a83487debca97eecd/20c0535_179.jpg",
     "https://img.freepik.com/premium-photo/self-driving-car-navigating-through-city-technology-iot-smart-city-generative-ai_518816-5091.jpg",
     "https://img.freepik.com/premium-photo/autonomous-car-driving-road-self-driving-car-with-sensor-scan-automotive-technology_90099-10132.jpg",
     "https://wallpapercave.com/wp/wp7359234.jpg",

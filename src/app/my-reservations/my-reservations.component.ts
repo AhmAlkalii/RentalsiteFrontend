@@ -11,13 +11,14 @@ import { AvailableCarsService } from '../available-cars.service';
 })
 export class MyReservationsComponent implements OnInit {
   reservationData = {
+    brand:  '',
     from_location: '',
     to_location: '',
   };
 
   reservations: any[] = [];
   availableCars: any[] = [];
-  selectedCar: any; 
+  
 
   constructor(
     private reservationService: ReservationService,
@@ -33,44 +34,40 @@ export class MyReservationsComponent implements OnInit {
 
   makeReservation() {
     const userId = this.authService.getUserId();
-    const selectedCar = this.selectedCar;
-  
-    if (!selectedCar) {
-      console.error('No car selected');
-      return;
-    }
-  
+
     console.log('Reservation Payload:', {
       userId: userId ?? 0,
-      selectedCar: selectedCar,
+      brand: this.reservationData.brand,
       from_location: this.reservationData.from_location,
       to_location: this.reservationData.to_location,
     });
-  
-    this.reservationService.makeReservation(
-      userId ?? 0,
-      selectedCar, 
-      this.reservationData.from_location,
-      this.reservationData.to_location
-    ).subscribe(
-      (res) => {
-        console.log(res);
-        this.toastr.success('Reservation successful!', 'Success');
-        this.loadReservationHistory();
-      },
-      (err) => {
-        console.error(err);
-        this.toastr.error('Error making reservation', 'Error');
-      }
-    );
-  }  
-  
-  
+
+    this.reservationService
+      .makeReservation(
+        userId ?? 0,
+        this.reservationData.brand,
+        this.reservationData.from_location,
+        this.reservationData.to_location
+      )
+      .subscribe(
+        (res) => {
+          console.log(res);
+          this.toastr.success('Reservation successful!', 'Success');
+          this.loadReservationHistory();
+        },
+        (err) => {
+          console.error(err);
+          this.toastr.error('Error making reservation', 'Error');
+        }
+      );
+  }
+
   loadReservationHistory() {
     const userId = this.authService.getUserId();
 
     this.reservationService.getUserReservations(userId ?? 0).subscribe(
       (res) => {
+        console.log(res);
         this.reservations = res;
       },
       (err) => {

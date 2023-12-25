@@ -10,18 +10,19 @@ export class ReservationService {
 
   constructor(private http: HttpClient) {}
 
-  makeReservation(userId: number, selectedCar: any, fromLocation: string, toLocation: string): Observable<any> {
+  makeReservation(userId: number, selectedCar: string, fromLocation: string, toLocation: string): Observable<any> {
     const url = `${this.apiUrl}/make-reservation/${userId}`;
     const reservationData = {
-      brand: selectedCar?.brand,
+      brand: selectedCar,
       from_location: fromLocation,
-      to_location: toLocation
+      to_location: toLocation,
     };
     return this.http.post(url, reservationData);
   }
 
-  getUserReservations(userId: number): Observable<any> {
+  getUserReservations(userId: number): Observable<any[]> {
     const url = `${this.apiUrl}/user-reservations/${userId}`;
-    return this.http.get(url);
+    return this.http.get<any[]>(url);
   }
+  
 }
