@@ -15,7 +15,8 @@ export class AppComponent {
 
   constructor(private authorizationService : AuthorizationService) { }
 
-  onLogout(){
-    this.authorizationService.logout();
+  onLogout() {
+    this.authorizationService.logout().subscribe(() => {
+    });
   }
 }

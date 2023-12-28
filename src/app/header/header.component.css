@@ -1,0 +1,22 @@
+li {
+    display: inline;
+    margin-right: 10px;
+   }
+   
+.navs
+{
+    background-color: #7BD3EA;
+}
+
+.nav-item a:hover {
+    color: #FAEED1; 
+}
+
+
+.search-form {
+    margin-right: 30px;
+  }
+  
+#form1{
+    background-color: #B6BBC4;
+}
