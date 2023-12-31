@@ -19,7 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CarInfoComponent } from './car-info/car-info.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { timeout } from 'rxjs';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +54,7 @@ import { timeout } from 'rxjs';
     ToastrModule.forRoot({
       positionClass: "toast-top-right",
       preventDuplicates: true,
-      timeOut: 5000,
+      timeOut: 2000,
     }),
     ToastModule,
     ReactiveFormsModule
