@@ -5,12 +5,29 @@ import { AvailableCarsService } from '../available-cars.service';
   templateUrl: './my-available-cars.component.html',
   styleUrls: ['./my-available-cars.component.css']
 })
+
 export class MyAvailableCarsComponent {
-  availableCars : any[] = [];
+  availableCars: any[] = [];
+  filteredCars: any[] = [];
 
-  constructor(private availableCarsService: AvailableCarsService){ }
+  constructor(private availableCarsService: AvailableCarsService) {}
 
-  ngOnInit(){
-    this.availableCarsService.getAvailableCars().subscribe({next:cars => this.availableCars = cars});
+  ngOnInit() {
+    this.availableCarsService.getAvailableCars().subscribe({
+      next: (cars) => {
+        this.availableCars = cars;
+        this.filteredCars = [...this.availableCars];
+      },
+    });
   }
+
+  filterCars(event: any) {
+    const searchTerm = event.target.value;
+    this.filteredCars = this.availableCars.filter((car) =>
+      car.brand.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+  
 }
+
+
