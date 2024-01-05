@@ -23,12 +23,21 @@ export class LoginComponent {
       res => {
         console.log(res);
         this.router.navigate(['/home']);
+        this.toastr.success("Logged in successfully !!", "Enjoy!!",{
+          easing:"ease-in",
+          easeTime: 1000
+        });
       },
       err => {
         console.error(err);
+        this.toastr.error("Login unsuccessful. Please check your credentials.", "Error",{
+          easing: "ease-in",
+          easeTime: 1000
+        });
       }
     );
   }
+  
   get Email(): FormControl {
     return this.loginForm.get('email') as FormControl;
   }
@@ -38,12 +47,4 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {}
-
-  showToasterSuccess(){
-    this.toastr.success("Logged in successfully !!", "Enjoy!!",{
-    easing:"ease-in",
-    easeTime: 1000
-    });
-  }
-
 }

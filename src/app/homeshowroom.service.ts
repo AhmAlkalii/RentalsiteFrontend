@@ -1,4 +1,3 @@
-// homeshowroom.service.ts
 import { Injectable } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
@@ -18,7 +17,9 @@ export class HomeshowroomService {
     "https://images3.alphacoders.com/212/212867.jpg",
     "https://astonmartinworks.com/wp-content/uploads/2019/02/modern-car-servicing2.jpg",
     "https://www.hdcarwallpapers.com/walls/2017_aston_martin_vanquish_s-HD.jpg",
+    "https://wallpapers.com/images/featured/f1-hfubqbf4vngbuqur.jpg",
     "https://blog-images.carshop.co.uk/2019/06/Penske-Wynn-Ferrari-Maserati--5-.jpg",
+    "https://t4.ftcdn.net/jpg/05/51/75/07/360_F_551750713_JdiH991rrrSFL5i7DAAYsL0Ua0riYpUO.jpg",
     "https://img.redbull.com/images/c_crop,w_6000,h_3000,x_0,y_386,f_auto,q_auto/c_scale,w_1200/redbullcom/2022/2/9/pdjsfsha7fpscr0dhpt4/new-car-new-name"
   ];
 
