@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthorizationService } from '../authorization.service';
 import { Router } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
   repeatPass: string = 'none';
 
-  constructor(private authService: AuthorizationService, private router: Router) { }  
+  constructor(private authService: AuthorizationService, private router: Router, private toastr: ToastrService) { }  
 
   ngOnInit(): void {
   }
@@ -45,6 +45,10 @@ export class SignUpComponent implements OnInit {
         console.log(res);
 
         this.router.navigate(['/home']);
+        this.toastr.success("Sign Up successful !!", "Enjoy!!",{
+          easing:"ease-in",
+          easeTime: 1000
+        });
       });
 
     } else {
