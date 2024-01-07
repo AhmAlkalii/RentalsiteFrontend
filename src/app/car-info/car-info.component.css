@@ -1,9 +1,11 @@
-.round{
-    border-radius: 2px;
+.round {
+    border-radius: 6px; 
     background-color: #F6D6D6;
+    overflow: hidden;
 }
 
 .cd :hover{
+    background-color: #CDE990;
     transform: scale(1.05); 
     transition: transform 0.3s ease; 
 }
