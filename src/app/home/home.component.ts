@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HomeshowroomService } from '../homeshowroom.service';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -7,21 +8,17 @@ import { HomeshowroomService } from '../homeshowroom.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  // Initial background image URL
-  backgroundImageUrl = "/assets/images/bg1.jpg";
+  backgroundImageUrl: SafeStyle = this.sanitizer.bypassSecurityTrustStyle('url("/assets/images/bg1.jpg")');
 
-  constructor(private showroomService: HomeshowroomService) {}
+  constructor(private showroomService: HomeshowroomService, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-    // Set initial background image and adjust the interval time
     this.showroomService.startBackgroundChangeInterval((url: string) => {
-      this.backgroundImageUrl = url;
-    }, 5000); 
+      this.backgroundImageUrl = this.sanitizer.bypassSecurityTrustStyle(`url('${url}')`);
+    }, 5000);
   }
-  
 
   ngOnDestroy() {
-    // Unsubscribe from the interval to avoid memory leaks
     this.showroomService.stopBackgroundChangeInterval();
   }
 }

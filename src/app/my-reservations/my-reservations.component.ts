@@ -10,6 +10,9 @@ import { AvailableCarsService } from '../available-cars.service';
   styleUrls: ['./my-reservations.component.css'],
 })
 export class MyReservationsComponent implements OnInit {
+
+  showReservationForm: boolean = false;
+
   reservationData = {
     brand:  '',
     from_location: '',
@@ -86,4 +89,9 @@ export class MyReservationsComponent implements OnInit {
       }
     );
   }
+
+  toggleReservationForm() {
+    this.showReservationForm = !this.showReservationForm;
+  }
+
 }

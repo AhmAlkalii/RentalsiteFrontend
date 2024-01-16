@@ -7,21 +7,36 @@ import { interval, Subscription } from 'rxjs';
 export class HomeshowroomService {
   private backgroundChangeInterval!: Subscription;
   private currentIndex = 0;
-  private imageUrls = [
-    "/assets/images/bg1.jpg",
-    "https://png.pngtree.com/background/20230412/original/pngtree-car-showroom-lighting-effect-advertising-background-picture-image_2401286.jpg",
-    "https://www.topgear.com/sites/default/files/images/news-article/2020/11/86d1c7742a1e093a83487debca97eecd/20c0535_179.jpg",
-    "https://img.freepik.com/premium-photo/self-driving-car-navigating-through-city-technology-iot-smart-city-generative-ai_518816-5091.jpg",
-    "https://img.freepik.com/premium-photo/autonomous-car-driving-road-self-driving-car-with-sensor-scan-automotive-technology_90099-10132.jpg",
-    "https://wallpapercave.com/wp/wp7359234.jpg",
-    "https://images3.alphacoders.com/212/212867.jpg",
-    "https://astonmartinworks.com/wp-content/uploads/2019/02/modern-car-servicing2.jpg",
-    "https://www.hdcarwallpapers.com/walls/2017_aston_martin_vanquish_s-HD.jpg",
-    "https://wallpapers.com/images/featured/f1-hfubqbf4vngbuqur.jpg",
-    "https://blog-images.carshop.co.uk/2019/06/Penske-Wynn-Ferrari-Maserati--5-.jpg",
-    "https://t4.ftcdn.net/jpg/05/51/75/07/360_F_551750713_JdiH991rrrSFL5i7DAAYsL0Ua0riYpUO.jpg",
-    "https://img.redbull.com/images/c_crop,w_6000,h_3000,x_0,y_386,f_auto,q_auto/c_scale,w_1200/redbullcom/2022/2/9/pdjsfsha7fpscr0dhpt4/new-car-new-name"
-  ];
+  private imageUrls: string[] = [];
+  private preloadedImages: HTMLImageElement[] = [];
+
+  constructor() {
+    this.imageUrls = [
+      "https://www.topgear.com/sites/default/files/news-listicle/image/6buyingachironjuly2016.jpg",
+      "https://www.topgear.com/sites/default/files/images/news-article/2020/11/86d1c7742a1e093a83487debca97eecd/20c0535_179.jpg",
+      "https://ocdn.eu/pulscms-transforms/1/J1Ek9kpTURBXy80MWNkMTFjMTI0NWVmY2ZiMmNhNmZiZDRkNjQ5ODZiMS5qcGeSlQMAAM0PoM0IypMFzQSwzQKk3gACoTAFoTEA",
+      "https://mediaassets.pca.org/pages/pca/images/content/img_9(3).jpg",
+      "https://wallpapercave.com/wp/wp7359234.jpg",
+      "https://images3.alphacoders.com/212/212867.jpg",
+      "https://i.gremicdn.pl/image/free/e5225bb65cb478cc2879bc07a1887da6/?t=crop:1600:992:nowe:0:66,resize:fill:1200:716,enlarge:1",
+      "https://www.hdcarwallpapers.com/walls/2017_aston_martin_vanquish_s-HD.jpg",
+      "https://wallpapers.com/images/featured/f1-hfubqbf4vngbuqur.jpg",
+      "https://carsales.pxcrush.net/carsales//car/dealer/bb39fdc48984a3fff6df5ec916451cf6.jpg",
+      "https://hips.hearstapps.com/hmg-prod/images/2024-ford-mustang-gt-111-64e6608fce997.jpg?crop=0.617xw:0.464xh;0.0369xw,0.413xh&resize=640:*",
+      "https://img.redbull.com/images/c_crop,w_6000,h_3000,x_0,y_386,f_auto,q_auto/c_scale,w_1200/redbullcom/2022/2/9/pdjsfsha7fpscr0dhpt4/new-car-new-name",
+      "/assets/images/bg1.jpg",
+    ];
+
+    this.preloadImages();
+  }
+
+  private preloadImages() {
+    this.imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+      this.preloadedImages.push(img);
+    });
+  }
 
   startBackgroundChangeInterval(callback: (url: string) => void, intervalTime: number = 5000) {
     this.backgroundChangeInterval = interval(intervalTime).subscribe(() => {
@@ -42,4 +57,3 @@ export class HomeshowroomService {
     callback(nextImageUrl);
   }
 }
-
