@@ -22,7 +22,7 @@ export class HomeshowroomService {
       "https://www.hdcarwallpapers.com/walls/2017_aston_martin_vanquish_s-HD.jpg",
       "https://wallpapers.com/images/featured/f1-hfubqbf4vngbuqur.jpg",
       "https://carsales.pxcrush.net/carsales//car/dealer/bb39fdc48984a3fff6df5ec916451cf6.jpg",
-      "https://hips.hearstapps.com/hmg-prod/images/2024-ford-mustang-gt-111-64e6608fce997.jpg?crop=0.617xw:0.464xh;0.0369xw,0.413xh&resize=640:*",
+      "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_1080,q_auto:eco,w_1920/v1/cms/uploads/l0cwn2uquu5n6kl3eow1",
       "https://img.redbull.com/images/c_crop,w_6000,h_3000,x_0,y_386,f_auto,q_auto/c_scale,w_1200/redbullcom/2022/2/9/pdjsfsha7fpscr0dhpt4/new-car-new-name",
       "/assets/images/bg1.jpg",
     ];
