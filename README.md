@@ -31,8 +31,7 @@ Before running the application, make sure to install the following dependencies:
 `npm install @angular/animations --save`,
 `npm install ngx-toastr --save`,
 `npm i bootstrap-icons`,
-`ng add @ng-bootstrap/ng-bootstrap`,
-`ng add @angular/material`
+`ng add @ng-bootstrap/ng-bootstrap`
 
 ## Further help
 

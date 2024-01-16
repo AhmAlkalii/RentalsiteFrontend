@@ -4,7 +4,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ToastModule } from 'primeng/toast';
-import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -51,7 +50,6 @@ import { ContactsComponent } from './contacts/contacts.component';
     ]),
     NgbModule,
     FormsModule,
-    MatIconModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
