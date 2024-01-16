@@ -7,3 +7,5 @@ html, body, app-root {
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 13%, rgba(37,29,20,1) 84%);
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
