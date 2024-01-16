@@ -22,6 +22,17 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
+## Dependencies and Setup
+
+Before running the application, make sure to install the following dependencies:
+
+ng add primeng
+npm install primeng primeicons
+npm install @angular/animations --save
+npm install ngx-toastr --save
+npm i bootstrap-icons
+ng add @ng-bootstrap/ng-bootstrap
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
