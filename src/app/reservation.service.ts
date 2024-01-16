@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ReservationService {
-  private apiUrl = 'http://localhost:5000';
+  private apiUrl = 'https://passarentalbackend.azurewebsites.net';
 
   constructor(private http: HttpClient) {}
 

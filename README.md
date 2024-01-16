@@ -26,12 +26,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 Before running the application, make sure to install the following dependencies:
 
-'ng add primeng',
-'npm install primeng primeicons',
-'npm install @angular/animations --save',
-'npm install ngx-toastr --save',
-'npm i bootstrap-icons',
-'ng add @ng-bootstrap/ng-bootstrap',
+`ng add primeng`,
+`npm install primeng primeicons`,
+`npm install @angular/animations --save`,
+`npm install ngx-toastr --save`,
+`npm i bootstrap-icons`,
+`ng add @ng-bootstrap/ng-bootstrap`,
 
 ## Further help
 
