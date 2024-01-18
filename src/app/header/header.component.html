@@ -13,14 +13,14 @@
           <li class="nav-item" *ngIf="isLoggedIn  || hasSignedUp ">
             <a class="nav-link" [routerLink]="['/my-reservations']"  (click)="isMenuCollapsed = true" >My Reservation</a>
           </li>
+          <li class="nav-item" *ngIf="isLoggedIn  || hasSignedUp ">
+            <a class="nav-link" [routerLink]="['/passa-ai']"  (click)="isMenuCollapsed = true" >Passa AI</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/about-us']"  (click)="isMenuCollapsed = true" >About us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/contact']"  (click)="isMenuCollapsed = true" >Contact Us</a>
-          </li>
-          <li class="nav-item" *ngIf="isLoggedIn  || hasSignedUp ">
-            <a class="nav-link" [routerLink]="['/passa-ai']"  (click)="isMenuCollapsed = true" >Passa AI</a>
           </li>
         </ul>
 
