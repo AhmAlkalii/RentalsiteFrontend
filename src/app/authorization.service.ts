@@ -9,6 +9,8 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class AuthorizationService {
   private apiUrl = 'https://passarentalbackend.azurewebsites.net/';
+
+  
   private user: any = { id: null, firstname: '', lastname: '', email: '' }; 
   private logged = false;
   private signedUp = false;

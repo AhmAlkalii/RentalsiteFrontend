@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CarInfoComponent } from './car-info/car-info.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { PassaAiComponent } from './passa-ai/passa-ai.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     LoginComponent,
     SignUpComponent,
     CarInfoComponent,
-    ContactsComponent
+    ContactsComponent,
+    PassaAiComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { ContactsComponent } from './contacts/contacts.component';
       { path: 'login', component: LoginComponent},
       { path: 'home', component: HomeComponent},
       { path: 'contact', component: ContactsComponent},
+      { path: 'passa-ai', component: PassaAiComponent},
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', redirectTo: '/home', pathMatch: 'full' },
     ]),
