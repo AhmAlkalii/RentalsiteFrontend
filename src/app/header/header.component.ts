@@ -13,6 +13,10 @@ export class HeaderComponent {
     return this.authorizationService.isLoggedIn;
   }
 
+  get hasSignedUp() {
+    return this.authorizationService.hasSignedUp();
+  }
+  
   @Output() logout = new EventEmitter();
 
   constructor(private authorizationService : AuthorizationService) {}
@@ -21,4 +25,6 @@ export class HeaderComponent {
   {
     this.logout.emit();
   }
+
+
 }
